@@ -1,0 +1,81 @@
+@import "colors";
+@import "media-queries";
+
+%align-center {
+    display: flex;
+    align-items: center;
+}
+
+%color {
+    color: red;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: $light;
+    padding: 0.5rem calc((100vw - 1200px) / 2);
+    z-index: 10;
+    position: relative;
+
+    &__logo {
+        color: $dark;
+        font-size: 2rem;
+        margin-left: 24px;
+        text-decoration: none;
+        @extend %align-center;
+    }
+
+    &__bars {
+        opacity: 0;
+
+        @include tablet {
+            color: $dark;
+            opacity: 1;
+            position: absolute;
+
+            right: 20px;
+            font-size: 2rem;
+        }
+    }
+
+    &__menu {
+        @extend %align-center;
+        gap: 30px;
+        margin-right: 24px;
+       
+        font-size: 20px;
+
+        @include tablet {
+            display: none;
+
+        }
+
+        &--links {
+          color: $dark;
+            padding: 0 1rem;
+            justify-content: center;
+            text-decoration: none;
+            @extend %align-center;
+            &:hover {
+                color: $lime;
+                transition: all 0.3s ease-in-out;
+            }
+
+        }
+        #button{
+            padding: 12px 24px;
+            background-color: $lime;
+            border-radius: 4px;
+            color: $light;
+            margin-left: 16px;
+            outline: none;
+            border: none;
+            &:hover {
+                background-color: $orangeRed;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+
+    }
+}
