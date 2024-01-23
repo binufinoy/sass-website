@@ -24,18 +24,7 @@
         @extend %align-center;
     }
 
-    &__bars {
-        opacity: 0;
-
-        @include tablet {
-            color: $dark;
-            opacity: 1;
-            position: absolute;
-
-            right: 20px;
-            font-size: 2rem;
-        }
-    }
+ 
 
     &__menu {
         @extend %align-center;
@@ -45,22 +34,53 @@
         font-size: 20px;
 
         @include tablet {
-            display: none;
-
+            
+            gap: 10px;
+            flex-direction: column;
+           
+            width: 30%;
+            
+            position: fixed;
+            top: 0;
+           right: -5%;
+            z-index: 100;
+            background-color: beige;
+           
+           
+          
         }
-
+        @include mobile {
+            
+        
+           gap:20px;
+            width: 40%;
+            right: -10%;
+            position: fixed;
+            top: 0;
+          
+            z-index: 100;
+            background-color: beige;
+            
+           
+          
+        }
+      
         &--links {
           color: $dark;
             padding: 0 1rem;
             justify-content: center;
             text-decoration: none;
             @extend %align-center;
+            
             &:hover {
                 color: $lime;
                 transition: all 0.3s ease-in-out;
             }
+           
+        }
 
         }
+        
         #button{
             padding: 12px 24px;
             background-color: $lime;
@@ -73,7 +93,14 @@ margin-left: 16px;
                 background-color: $orangeRed; 
                 transition: all 0.3s ease-in-out;
             }
+            @include mobile{
+                font-size: 1rem;
+                padding: 5px ;
+            }
+            @include tablet{
+                font-size: 1rem;
+                padding: 5px ;
+            }
         }
 
     }
-}
